@@ -1,112 +1,119 @@
-import React, { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import Buttons from "./common/Buttons";
 import Inputs from "./common/Inputs";
-
-
+import bgImg from './Img/img1.png';
+import { FcGoogle } from 'react-icons/fc';
 
 const Signin = () => {
-  const initialValues ={ email:"" , password:""};
-  const [formValues , setFormValues] = useState(initialValues);
-  const [formErrors , setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit]= useState(false);
-  
-  const handleChange =(e)=>{
+  const handleClick = () => {
+    console.log("hello,josephine");
+  }
+  const initialValues = {
+    email: "",
+    password: "",
+    confirmPassword: "",
+    firstname: "",
+    username: "",
+  };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
     console.log(e.target);
-    const { name, value} = e.target;
-    setFormValues({...formValues , [name]:value});
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
   };
-  const handleSubmit = (e)=> {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
+    setIsSubmit(false);
   };
   useEffect(() => {
     console.log(formErrors);
-    if(Object.keys(formErrors).length === 0 && isSubmit){
-      console.log(formValues); 
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(formValues);
     }
-  },[formErrors]);
+  }, [formErrors]);
 
-  const validate =(values) =>{
-    const errors ={};
-    const regex = "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.";
-    if (!values.email){
-      errors.email ="Email is required!";
-    }else if (!regex.test(values.email)){
-      errors.email ="Invalid Email format!"; 
+  const validate = (values) => {
+    const errors = {};
+    const regex = "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i.";
+    if (!values.email) {
+      errors.email = "Email is required!";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Invalid Email format!";
     }
-    if (!values.password){
-      errors.password ="Password is required!";
-    }else if (values.password.length <4){
-      errors.password ="password must be more than 4 characters!"; 
+    if (!values.fullname) {
+      errors.fullname = "name is a Must!";
     }
-    else if (values.password.length >10){
-      errors.password ="password must not exceed more than 10 characters!"; 
+    if (!values.username) {
+      errors.username = "username is a Must!";
+    }
+    if (!values.password) {
+      errors.password = "Password is required!";
+    } else if (values.password.length < 4) {
+      errors.password = "password must be more than 4 characters!";
+    } else if (values.password.length > 10) {
+      errors.password = "password must not exceed more than 10 characters!";
     }
     return errors;
   };
-
   return (
-    <div>
-    <h1>Welcome back</h1>
-       {Object.keys(formErrors).length===0 && isSubmit ? (<div className="ui message success">Welcome back! Please enter your details.</div>):(<pre>(JSON.stringify(formValues,undefined,2))</pre>)}
-
-     <form onSubmit={handleSubmit}>
-
-      <h4 className=" font-semibold mt-24">login</h4>
-      <p className=" font-normal mt-10">
-        Are you new?
-        <Link to ='/signup'>
-        <span className=" font-semibold ml-2  hover:text-lishe-green">
-          create an account
-        </span></Link>
-      </p>
-     
-      <div className="mt-5">
-        <div className="mr-20">
-          
-        <Inputs
-        label="Email"
-        type="text"
-        placeholder="enter email address"
-        name="Email adress"
-        required=''
-        value={formValues.email}
-        onChange={handleChange}
-        />
-        
+    
+    <section>
+    <div className="flex w-full mx-w-[1760px] p-4 h-full max-h-screen bg-edify-gray">
+    <div className="flex">
+            <div className="col-1 w-[50%] box-content justify-center h-[450px] m-24 mr-5 ml-7 bg-edify-white rounded-[5px]">
+                <h1 className="text-center font-bold ">Welcome back</h1>
+                <span className="ml-72">Welcome back! Please enter your details</span>
+      
+      <form className="m-12 space-y-6" onSubmit={handleSubmit}>
+        <p>{formErrors.username}</p>
+        <div className="mt-2">
+          <Inputs
+            label="EMail"
+            type="text"
+            placeholder="enter Email"
+            name="Email address"
+            required=""
+            value={formValues.email}
+            onChange={handleChange}
+          />
         </div>
-       <p>{formErrors.email}</p>
-        <div className="mt-5 mr-20" >
-        
-        <Inputs
-        label="Password"
-        type="text"
-        placeholder="enter password"
-        name=" Password"
-        required=''
-        value={formValues.password}
-        onChange={handleChange}
-        />
-        
+        <p>{formErrors.email}</p>
+        <div className="mt-2">
+          <Inputs
+            label="Password"
+            type="text"
+            placeholder="enter password"
+            name=" Password"
+            required=""
+            value={formValues.password}
+            onChange={handleChange}
+          />
+          <p>{formErrors.password}</p>
         </div>
-         <p>{formErrors.password}</p>
-        
-<div class="flex items-center ml-96">
-    <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-edify-blue bg-edify-gray rounded border-edify-black   "/>
-    <label for="link-checkbox" class="ml-2 text-sm font-medium text-edify-black dark:text-edify-black">Remember me? </label>
-    <p className="ml-60">forgot password</p>
-</div>
-
-      </div>
-      <div className="mt-5 mr-24">
-      <Buttons others={true} name="Login" />{" "}
-</div>
-</form>
+        <p>{formErrors.password}</p>
+        <div className="mt-2 text-center">
+          <Buttons others={false} icon={<FcGoogle size={14}/>} name="continue with google."/>
+                  </div>
+        <div className="mt-2 text-center">
+        <Buttons others={true} onClick ={handleClick} name="sign up" />{" "}
+        </div>
+      </form>
     </div>
+    <div className="col-2 w-[50%] h-[450px] box-content justify-center mb-5 m-24 mr-1 ml-9 bg-edify-grey rounded-[5px]">
+    
+    <div className="text-center"><img  src={bgImg} alt="" /></div>
+</div>
+</div>
+</div>
+</section>
   );
 };
 
 export default Signin;
+
+

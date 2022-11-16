@@ -1,6 +1,7 @@
 import React from "react";
-import { AiFillHome, AiOutlineCalendar } from "react-icons/ai";
-import { IoPersonOutline, IoMdPeople} from "react-icons/io";
+import { AiFillHome } from "react-icons/ai";
+import { IoPersonOutline, IoCalendarNumberSharp} from "react-icons/io5";
+import { IoMdPeople} from "react-icons/io";
 import { GiBookCover} from "react-icons/gi";
 import { HiCurrencyDollar} from "react-icons/hi";
 import { BiCalendarEvent} from "react-icons/bi";
@@ -11,10 +12,10 @@ const Sidebar = () => {
     <div className=" overflow-y-auto w-64 h-screen  ml-10 mt-[50px]  bg-edify-white ">
       <ul className=" space-y-24">
 
-        <li className=" flex-auto text-center text-edify-black hover:text-edify-black font-bold mt-20 whitespace-nowrap">
+        <li className=" flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/'>
             <span className="flex ml-20 ">
-            <span className=" text-white mr-2">
+            <span className=" text-edify-black mr-2">
               <AiFillHome />
             </span>{" "}
             Home
@@ -22,35 +23,33 @@ const Sidebar = () => {
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-white  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/profile'>
             <span className="flex ml-20 ">
-            
-            <span className=" text-edify-white mr-2">
+            <span className=" text-edify-black mr-2">
               <IoPersonOutline />
             </span>{" "}
-            Profile
-            
+            Profile     
           </span>
           </Link>
         </li>
 
-        <li className="flex-auto text-center text-edify-white  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/calendar'>
             <span className="flex ml-20 ">
             
-            <span className=" text-edify-white mr-2">
-              <AiOutlineCalendar />
+            <span className=" text-edify-black mr-2">
+              <IoCalendarNumberSharp />
             </span>{" "}
             Calendar          
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-white  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/class'>
             <span className="flex ml-20 ">
             
-            <span className=" text-edify-white mr-2">
+            <span className=" text-edify-black mr-2">
               <IoMdPeople />
             </span>{" "}
             Class
@@ -58,11 +57,11 @@ const Sidebar = () => {
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-white  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/homework'>
             <span className="flex ml-20 ">
             
-            <span className=" text-edify-white mr-2">
+            <span className=" text-edify-black mr-2">
               <GiBookCover />
             </span>{" "}
             Homework
@@ -71,7 +70,7 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="flex-auto  text-center text-lwhite hover:text-green font-bold  whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to ='payment'>
             <span className="flex ml-20 ">
             
@@ -82,11 +81,11 @@ const Sidebar = () => {
           </span>
           </Link>
         </li>
-        <li className="flex-auto  text-center text-white hover:text-green font-bold  whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
           <Link to='/event'>
             <span className="flex ml-20 ">
             
-            <span className=" text-edify-white mr-2">
+            <span className=" text-edify-black mr-2">
               <BiCalendarEvent />
             </span>{" "}
             Event

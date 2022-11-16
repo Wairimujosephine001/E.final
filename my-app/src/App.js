@@ -8,7 +8,7 @@ import Sidebar from './Components/Sidebar';
 function App() {
   return (
     <div>
-   <Sidebar/>
+   <Signin />
     </div>  
   );
 }
