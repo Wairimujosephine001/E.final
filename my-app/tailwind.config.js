@@ -9,6 +9,8 @@ module.exports = {
       'edify-Gray':'#F3F1EB',
       'edify-grey':'#FAF7F0',
       'edify-blue':'#CDFCF6',
+      'edify-skyblue':'#222E99',
+
     },
     extend: {},
   },

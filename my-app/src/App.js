@@ -9,6 +9,8 @@ function App() {
   return (
     <div>
    <Signin />
+   <Signup/>
+   <Sidebar/>
     </div>  
   );
 }

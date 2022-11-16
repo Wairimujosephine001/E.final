@@ -10,59 +10,59 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className=" overflow-y-auto w-64 h-screen  ml-10 mt-[50px]  bg-edify-white ">
-      <ul className=" space-y-24">
+      <ul className=" space-y-8">
 
-        <li className=" flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className=" flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/'>
             <span className="flex ml-20 ">
             <span className=" text-edify-black mr-2">
-              <AiFillHome />
+              {<AiFillHome size={16}/>}
             </span>{" "}
             Home
             
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/profile'>
             <span className="flex ml-20 ">
             <span className=" text-edify-black mr-2">
-              <IoPersonOutline />
+              {<IoPersonOutline size={16}/>}
             </span>{" "}
             Profile     
           </span>
           </Link>
         </li>
 
-        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/calendar'>
             <span className="flex ml-20 ">
             
             <span className=" text-edify-black mr-2">
-              <IoCalendarNumberSharp />
+              {<IoCalendarNumberSharp size={16}/>}
             </span>{" "}
             Calendar          
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/class'>
             <span className="flex ml-20 ">
             
             <span className=" text-edify-black mr-2">
-              <IoMdPeople />
+              {<IoMdPeople size={16} />}
             </span>{" "}
             Class
             
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-black hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/homework'>
             <span className="flex ml-20 ">
             
             <span className=" text-edify-black mr-2">
-              <GiBookCover />
+              {<GiBookCover size={16} />}
             </span>{" "}
             Homework
             
@@ -70,23 +70,22 @@ const Sidebar = () => {
           </Link>
         </li>
 
-        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to ='payment'>
             <span className="flex ml-20 ">
-            
             <span className=" text-edify-black mr-2">
-              <HiCurrencyDollar />
+            {<HiCurrencyDollar size={16}/>}
             </span>{" "}
             Payment
           </span>
           </Link>
         </li>
-        <li className="flex-auto text-center text-edify-black  hover:text-edify-blue font-bold whitespace-nowrap">
+        <li className="flex-auto text-center text-edify-black  hover:text-edify-skyblue font-bold whitespace-nowrap">
           <Link to='/event'>
             <span className="flex ml-20 ">
             
             <span className=" text-edify-black mr-2">
-              <BiCalendarEvent />
+             { <BiCalendarEvent size={16}/>}
             </span>{" "}
             Event
            
