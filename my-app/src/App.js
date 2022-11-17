@@ -1,16 +1,10 @@
 import './App.css';
-import Signin from './Components/Signin';
-import Signup from './Components/Signup';
-import Buttons from './Components/common/Buttons';
-import Inputs from './Components/common/Inputs';
-import Sidebar from './Components/Sidebar';
+import HomePage from './Components/pages/HomePage';
 
 function App() {
   return (
     <div>
-   <Signin />
-   <Signup/>
-   <Sidebar/>
+   <HomePage />
     </div>  
   );
 }
