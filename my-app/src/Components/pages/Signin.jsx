@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Buttons from "./common/Buttons";
-import Inputs from "./common/Inputs";
-import bgImg from './Img/img1.png';
-import { FcGoogle } from 'react-icons/fc';
+import Buttons from "../common/Buttons";
+import Inputs from "../common/Inputs";
+import bgImg from "../Img/img1.png";
+import { FcGoogle } from "react-icons/fc";
 
 const Signin = () => {
   const handleClick = () => {
     console.log("hello,josephine");
-  }
+  };
   const initialValues = {
     email: "",
     password: "",
     confirmPassword: "",
-    firstname: "",
-    username: "",
+   
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
@@ -61,59 +60,79 @@ const Signin = () => {
     return errors;
   };
   return (
-    
-    <section>
-    <div className="flex w-full mx-w-[1760px] p-4 h-full max-h-screen bg-edify-gray">
-    <div className="flex">
-            <div className="col-1 w-[50%] box-content justify-center h-[450px] m-24 mr-5 ml-7 bg-edify-white rounded-[5px]">
-                <h1 className="text-center font-bold ">Welcome back</h1>
-                <span className="ml-72">Welcome back! Please enter your details</span>
-      
-      <form className="m-12 space-y-6" onSubmit={handleSubmit}>
-        <p>{formErrors.username}</p>
-        <div className="mt-2">
-          <Inputs
-            label="EMail"
-            type="text"
-            placeholder="enter Email"
-            name="Email address"
-            required=""
-            value={formValues.email}
-            onChange={handleChange}
-          />
-        </div>
-        <p>{formErrors.email}</p>
-        <div className="mt-2">
-          <Inputs
-            label="Password"
-            type="text"
-            placeholder="enter password"
-            name=" Password"
-            required=""
-            value={formValues.password}
-            onChange={handleChange}
-          />
-          <p>{formErrors.password}</p>
-        </div>
-        <p>{formErrors.password}</p>
-        <div className="mt-2 text-center">
-          <Buttons others={false} icon={<FcGoogle size={14}/>} name="continue with google."/>
-                  </div>
-        <div className="mt-2 text-center">
-        <Buttons others={true} onClick ={handleClick} name="sign up" />{" "}
-        </div>
-      </form>
+    <div className="flex items-center justify-center w-full h-full bg-edify-gray ">
+    <div className="flex items-center justify-center w-full flex-col bg-edify-white gap-[2px] rounded-[5px]">
+          <h1 className="text-center font-bold ">Welcome Back!</h1>
+          <span>Welcome back, Please enter your details</span>
+          <form className=" w-[90%] flex items-center gap-8 justify-center flex-col"
+          onSubmit={handleSubmit}>
+  
+    <Inputs
+      label="EMail"
+      type="text"
+      placeholder="enter Email"
+      name="email address"
+      required=""
+      value={formValues.email}
+      onChange={handleChange}
+    />
+  
+  <p>{formErrors.email}</p>
+  
+    <Inputs
+      label="Password"
+      type="text"
+      placeholder="enter password"
+      name=" password"
+      required=""
+      value={formValues.password}
+      onChange={handleChange}
+    />
+    <p>{formErrors.password}</p>
+  
+  
+    <Inputs
+      label="Password"
+      type="text"
+      placeholder="enter password"
+      name=" Confirm password"
+      required=""
+      value={formValues.password}
+      onChange={handleChange}
+    />
+  
+  <p>{formErrors.password}</p>
+
+  <div class="flex items-center ml-12">
+<input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-edify-black bg-edify-gray rounded border-edify-black   "/>
+<label for="link-checkbox" class="text-sm font-medium text-edify-black dark:text-edify-black">Remember me? </label>
+<p className="ml-60">forgot password?</p>
+</div>
+  
+    <Buttons
+      type="submit"
+      others={false}
+      icon={<FcGoogle size={12} />}
+      name="continue with google."
+    />
+
+    <Buttons
+      type="submit"
+      others={true}
+      onClick={handleClick}
+      name="sign in"
+    />{" "}
+          </form>
+        
     </div>
-    <div className="col-2 w-[50%] h-[450px] box-content justify-center mb-5 m-24 mr-1 ml-9 bg-edify-grey rounded-[5px]">
-    
-    <div className="text-center"><img  src={bgImg} alt="" /></div>
-</div>
-</div>
-</div>
-</section>
+    <div className="bg-edify-grey rounded-[5px] w-[90%] flex items-center gap-56 justify-center h-[410px] flex-col gap-[2px] ">
+    <div className="flex items-center justify-center">
+          <img className="w-full h-full object-cover " src={bgImg} alt="" />
+        </div>
+      </div>
+    </div>
+
   );
 };
 
 export default Signin;
-
-

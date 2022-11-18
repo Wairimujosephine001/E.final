@@ -5,8 +5,8 @@ const Buttons = ({ name, others, style,goo,icon,iconStyle}) => {
         <button
         style={style}
         className={`w-fit  rounded-[30px] center ${
-          others ? "  bg-edify-blue  hover:bg-edify-Gray " : " bg-edify-grey hover:bg-edify-blue "
-       } text-sm rounded-[5px] font-medium py-1 px-4 text-white `} 
+          others ? " bg-edify-blue  hover:bg-edify-Gray " : "flex bg-edify-grey hover:bg-edify-blue "
+       } text-sm rounded-[5px] font-medium py-2 px-4 text-white `} 
       >
         {name}
         <span className={`${ iconStyle ? iconStyle : "" }`}>{icon}</span>

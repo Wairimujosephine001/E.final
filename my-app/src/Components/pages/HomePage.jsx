@@ -4,7 +4,7 @@ import { GiElvenCastle } from "react-icons/gi";
 import { IoAddCircle, IoNotifications, IoSettings } from "react-icons/io5";
 import Sidebar from "../common/Sidebar";
 import logo from "../Img/img1.png";
-import Buttons from "./../common/Buttons";
+import Buttons from "../common/Buttons";
 
 function HomePage() {
   return (
