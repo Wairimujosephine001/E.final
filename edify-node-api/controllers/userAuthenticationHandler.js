@@ -7,21 +7,22 @@ const _ = require("lodash");
 
 module.exports = {
     signUpHandler: async (req, res) => {
-        const input = req.body;
+        const {email,fullname, phonenumber, password} = req.body;
         const results = await knex.search("edify.user", { email });
         if (!isEmpty(results))
             return res.status(401).json({ errored: true, error: "Account Already exists" });
         const salt = await bcrypt.genSalt(15);
-        const hashedPassword = await bcrypt.hash(input.password, salt);
+        const hashedPassword = await bcrypt.hash(password, salt);
         const user = await knex.create("edify.user", {
-            full_name: input.fullname,
-            email: input.email,
+            full_name: fullname,
+            email: email,
+            phone_number: phonenumber,
             password_hash: hashedPassword,
         });
         jwt.sign({ user }, process.env.SECRET_KEY, { expiresIn: 1 * 24 * 60  },
             (err, token) => {
-                if (err)
-                    return res.status(500).json({ err, message: "Internal Server Error" });
+                // if (err)
+                //     return res.status(500).json({ err, message: "Internal Server Error" });
                 res.status(200).json({ user, token: token });
             }
         );

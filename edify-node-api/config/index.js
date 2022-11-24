@@ -45,7 +45,7 @@ module.exports = {
     },
 
     create: async (tableName, data) => {
-        let result = await knex(tableName).insert(data).returning('id');
+        let result = await knex(tableName).insert(data).returning('user_id');
         return result[0];
     },
 

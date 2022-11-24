@@ -2,11 +2,16 @@ const config = {
     client: 'pg',
     version: '8.8.0',
     connection: {
-        host: process.env.DATABASE_HOST,
-        user: process.env.DATABASE_USER,
-        port: process.env.DATABASE_PORT,
-        database: process.env.DATABASE,
-        password: process.env.DATABASE_USER_PASSWORD,
+        // host: process.env.DATABASE_HOST,
+        // user: process.env.DATABASE_USER,
+        // port: process.env.DATABASE_PORT,
+        // database: process.env.DATABASE,
+        // password: process.env.DATABASE_USER_PASSWORD,
+        host: "localhost",
+        user: "josephine",
+        port: "5432",
+        database: "Ediffy",
+        password: "admin",
     },
     pool: { min: 0, max: 15 }
 };

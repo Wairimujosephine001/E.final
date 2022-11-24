@@ -4,19 +4,19 @@ import Signin from './Components/pages/Signin';
 import Signup from './Components/pages/Signup';
 
 function App() {
+  const isAuth = localStorage.getItem("token");
+
   return (
       <div className='container w-full mx-auto bg-edify-gray h-screen'>
-    
 <Routes>
-<Route path="/" element={<Signup />}>
-  <Route path="/signup" element={<Signup />} />
+  <Route path="/" element={<Signup />} />
   <Route path="/signin" element={<Signin />} />
   <Route path="/homepage" element={<HomePage />} />
-</Route>
 </Routes>
       </div>
     
   );
 }
-
 export default App;
+
+   

@@ -47,17 +47,15 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
-  renderInputs = (name, label, type, style) => {
+  renderInputs = (name, type) => {
     const { data, errors } = this.state;
     return (
       <Inputs
         name={name}
-        label={label}
         value={data[name]}
         errors={errors[name]}
-        inputType={type}
+        type={type}
         onChange={this.handleChange}
-        inputStyle={style}
       />
     );
   };
@@ -69,6 +67,7 @@ class Form extends Component {
         textareaStyle={style}
         value={value}
         label={label}
+        placeholder={value}
         error={""}
       />
     );
@@ -78,7 +77,7 @@ class Form extends Component {
     return (
       <Buttons
         buttonText={text}
-        handleSubmit={this.handleSubmit}
+        onSubmit={this.onSubmit}
       />
     );
   };
